@@ -7,7 +7,12 @@ using UnityEngine.UI;
 public class PlayerThings : MonoBehaviour
 {
     [SerializeField] private TMP_InputField InField;
-    [SerializeField] private GameObject fuego;
+
+    #region gameobjects
+    [SerializeField] private GameObject water;
+    [SerializeField] private GameObject fire;
+    [SerializeField] private GameObject tornado;
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +30,23 @@ public class PlayerThings : MonoBehaviour
             InField.ActivateInputField();
 
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Enter key was pressed.");
-        }
     }
 
     private void DoThinghy(string inp)
     {
         if (inp=="fire")
         {
-            Instantiate(fuego, transform.position,Quaternion.identity);
+            Instantiate(fire, transform.position,Quaternion.identity);
+        }
+
+        if (inp == "tornado")
+        {
+            Instantiate(tornado, transform.position, Quaternion.identity);
+        }
+
+        if (inp == "water")
+        {
+            Instantiate(water, transform.position, Quaternion.identity);
         }
     }
 }

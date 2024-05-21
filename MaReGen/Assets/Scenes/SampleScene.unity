@@ -243,7 +243,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InField: {fileID: 409886734}
-  fuego: {fileID: 296597960154280790, guid: 5d4ee5ec94519124bb3f859a6d565fa2, type: 3}
+  water: {fileID: 3177936600611400231, guid: 8fbcd283749706e43b0268aae3870bad, type: 3}
+  fire: {fileID: 5113939982577181048, guid: 58f222ae670b0804aa25b9a086c3dc96, type: 3}
+  tornado: {fileID: 3631565700720690759, guid: c2f22943dc2c54e428aedd4867c607a8, type: 3}
 --- !u!1 &155657537
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 2.54, y: 2.52, z: -1.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
