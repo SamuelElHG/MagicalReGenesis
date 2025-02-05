@@ -24452,6 +24452,7 @@ GameObject:
   - component: {fileID: 5113939982577181050}
   - component: {fileID: 5113939982577181049}
   - component: {fileID: -7964668614521500295}
+  - component: {fileID: -3257715693296988903}
   m_Layer: 0
   m_Name: FireProjectile
   m_TagString: Untagged
@@ -29285,9 +29286,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5113939982577181048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: feccced68d646be45a8b9eab752689ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3257715693296988903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113939982577181048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521ccf3c67d91364187a96025b04ba53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5113939982951544106
