@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, playerLocation.position, speed*Time.deltaTime);
     }
 
-    public void healthDown()
+    public void healthDown(TipoElemento bulletElement)
     {
         health--;
         Debug.Log("New health is " + health);
