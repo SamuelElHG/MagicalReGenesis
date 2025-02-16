@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Elements;
 
 public class ProjectileScript : MonoBehaviour
 {
     //[SerializeField] private float
     // Start is called before the first frame update
+    [SerializeField] TipoElemento elements;
+
     void Start()
     {
         StartCoroutine(die());
@@ -20,5 +23,18 @@ public class ProjectileScript : MonoBehaviour
     {
         yield return new WaitForSeconds(GlobalVariables.Instance.projectileLifeTime);
         Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        EnemyScript enemigo = collision.gameObject.GetComponent<EnemyScript>(); // no sé como acceder al elemento de otra manera
+        Debug.Log(enemigo.element); // igual probablemente así es mejor pq así puedo cambiarle todas las weas
+
+        enemigo.healthDown();
+
+        Destroy(gameObject);
+
+
+
     }
 }

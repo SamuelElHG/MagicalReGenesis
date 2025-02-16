@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8207827773233049683}
   - component: {fileID: 3405430193103740406}
   - component: {fileID: 8534853681479672833}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 8375150028714255760}
   - component: {fileID: 7839084145690483452}
   - component: {fileID: 7838840597819895505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Secondary (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9787,7 +9787,7 @@ GameObject:
   - component: {fileID: 5113939982001710258}
   - component: {fileID: 5113939982001710268}
   - component: {fileID: 5113939982001710259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Dots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14675,7 +14675,7 @@ GameObject:
   - component: {fileID: 5113939982486074275}
   - component: {fileID: 5113939982486074285}
   - component: {fileID: 5113939982486074284}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Secondary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19563,7 +19563,7 @@ GameObject:
   - component: {fileID: 5113939982507611621}
   - component: {fileID: 5113939982507611623}
   - component: {fileID: 5113939982507611622}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Debris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24453,9 +24453,11 @@ GameObject:
   - component: {fileID: 5113939982577181049}
   - component: {fileID: -7964668614521500295}
   - component: {fileID: -3257715693296988903}
-  m_Layer: 0
+  - component: {fileID: -1406763160058762692}
+  - component: {fileID: -2756427704386742789}
+  m_Layer: 7
   m_Name: FireProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29303,6 +29305,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521ccf3c67d91364187a96025b04ba53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elements: 3
+--- !u!54 &-1406763160058762692
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113939982577181048}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &-2756427704386742789
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113939982577181048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5113939982951544106
 GameObject:
   m_ObjectHideFlags: 0
@@ -29314,7 +29365,7 @@ GameObject:
   - component: {fileID: 5113939982951544107}
   - component: {fileID: 5113939982951544085}
   - component: {fileID: 5113939982951544084}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34202,7 +34253,7 @@ GameObject:
   - component: {fileID: 5113939983356716976}
   - component: {fileID: 5113939983356716978}
   - component: {fileID: 5113939983356716977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
