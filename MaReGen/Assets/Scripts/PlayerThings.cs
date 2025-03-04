@@ -12,11 +12,16 @@ public class PlayerThings : MonoBehaviour
     [SerializeField] private GameObject water;
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject tornado;
+    public ProjectilesHolderScript Projectiles;
     #endregion
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("Vamos a imprimir las weas del diccionario");
+        foreach (var kvp in Projectiles.projectilesDict)
+        {
+            Debug.Log("Clave: " + kvp.Key + ", GameObject: " + kvp.Value.name);
+        }
     }
 
     // Update is called once per frame
@@ -24,7 +29,7 @@ public class PlayerThings : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            DoThinghy(InField.text);
+            DoThinghy(InField.text.ToLower());
             InField.text = null;
             InField.Select();
             InField.ActivateInputField();
@@ -34,19 +39,13 @@ public class PlayerThings : MonoBehaviour
 
     private void DoThinghy(string inp)
     {
-        if (inp=="fire")
+        if (Projectiles.projectilesDict.ContainsKey(inp))
         {
-            Instantiate(fire, transform.position,Quaternion.identity);
+            Instantiate(Projectiles.projectilesDict[inp], transform.position, Quaternion.identity);
         }
-
-        if (inp == "tornado")
+        else
         {
-            Instantiate(tornado, transform.position, Quaternion.identity);
-        }
-
-        if (inp == "water")
-        {
-            Instantiate(water, transform.position, Quaternion.identity);
+            Debug.Log("No existe ese poder"); //hacer un pop up ingame que diga eso
         }
     }
 }

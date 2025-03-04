@@ -11,6 +11,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] public int health;
 
     [SerializeField] public TipoElemento element;
+
+    [SerializeField] private TipoElemento weakness;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,14 @@ public class EnemyScript : MonoBehaviour
 
     public void healthDown(TipoElemento bulletElement)
     {
-        health--;
+        Debug.Log(bulletElement.ToString());
+        if (bulletElement == weakness)
+        {
+            health -= 2;
+        }else
+        {
+            health -= 1;
+        }
         Debug.Log("New health is " + health);
         if (health == 0)
         {

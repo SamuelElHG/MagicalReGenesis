@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4307420880626441439}
   - component: {fileID: 7131714617347915169}
   - component: {fileID: 3890239119286461850}
-  - component: {fileID: 4124500174259097405}
   - component: {fileID: 22747436148239369}
   - component: {fileID: 3590816669595258768}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -127,19 +126,6 @@ MonoBehaviour:
   water: {fileID: 3177936600611400231, guid: 8fbcd283749706e43b0268aae3870bad, type: 3}
   fire: {fileID: 5113939982577181048, guid: 58f222ae670b0804aa25b9a086c3dc96, type: 3}
   tornado: {fileID: 3631565700720690759, guid: c2f22943dc2c54e428aedd4867c607a8, type: 3}
---- !u!114 &4124500174259097405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124501705361639073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b0e0e009ab112a4aa6b8941d922c7c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quetienes: 0
 --- !u!114 &22747436148239369
 MonoBehaviour:
   m_ObjectHideFlags: 0
