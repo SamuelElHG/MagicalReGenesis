@@ -8,6 +8,7 @@ public class ProjectilesHolderScript : MonoBehaviour
     [SerializeField] public List<GameObject> projectilesObject = new List<GameObject>();
     [SerializeField] public List<string> projectilesName = new List<string>();
     public Dictionary<string, GameObject> projectilesDict = new Dictionary<string, GameObject>();
+
     public void Awake()
     {
         

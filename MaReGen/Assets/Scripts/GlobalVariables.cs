@@ -9,6 +9,13 @@ public class GlobalVariables : MonoBehaviour
     [SerializeField] public float projectileSpeed = 1;
     [SerializeField] public float projectileLifeTime = 1;
 
+    #region PlayerLanes
+    [SerializeField] public Vector3 leftLane;
+    [SerializeField] public Vector3 rightLane;
+    [SerializeField] public Vector3 centerLane;
+    
+    #endregion
+
     void Awake()
     {
         // Verificar si ya existe una instancia
@@ -21,6 +28,10 @@ public class GlobalVariables : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
     }
 
 }

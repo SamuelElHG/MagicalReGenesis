@@ -5,7 +5,8 @@ using static Elements;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] private Transform playerLocation;
+     
+
     [SerializeField] private float speed;
 
     [SerializeField] public int health;
@@ -16,13 +17,12 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, playerLocation.position, speed*Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, GlobalVariables.Instance.centerLane, speed*Time.deltaTime);
     }
 
     public void healthDown(TipoElemento bulletElement)

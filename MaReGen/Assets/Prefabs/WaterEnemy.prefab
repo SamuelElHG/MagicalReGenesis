@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9158798492679403704}
   - component: {fileID: 1622125706286174690}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: WaterEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,5 +121,5 @@ MonoBehaviour:
   playerLocation: {fileID: 0}
   speed: 0.1
   health: 2
-  element: 0
-  weakness: 3
+  element: 1
+  weakness: 0

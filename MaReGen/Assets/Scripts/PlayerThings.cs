@@ -9,11 +9,11 @@ public class PlayerThings : MonoBehaviour
     [SerializeField] private TMP_InputField InField;
 
     #region gameobjects
-    [SerializeField] private GameObject water;
-    [SerializeField] private GameObject fire;
-    [SerializeField] private GameObject tornado;
     public ProjectilesHolderScript Projectiles;
     #endregion
+
+    private List<string> LanesNames = new List<string> { "left", "center", "right" };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,8 @@ public class PlayerThings : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            DoThinghy(InField.text.ToLower());
+            shoot(InField.text.ToLower());
+
             InField.text = null;
             InField.Select();
             InField.ActivateInputField();
@@ -37,15 +38,38 @@ public class PlayerThings : MonoBehaviour
         }
     }
 
-    private void DoThinghy(string inp)
+    private void shoot(string inp)
     {
-        if (Projectiles.projectilesDict.ContainsKey(inp))
+        if (LanesNames.Contains(inp))
         {
-            Instantiate(Projectiles.projectilesDict[inp], transform.position, Quaternion.identity);
+            if (inp == "center")
+            {
+                transform.position = GlobalVariables.Instance.centerLane;
+            }
+
+            if (inp == "left")
+            {
+                transform.position = GlobalVariables.Instance.leftLane;
+            }
+
+            if (inp == "right")
+            {
+                transform.position = GlobalVariables.Instance.rightLane;
+            }
         }
         else
         {
-            Debug.Log("No existe ese poder"); //hacer un pop up ingame que diga eso
+            if (Projectiles.projectilesDict.ContainsKey(inp))
+            {
+                Instantiate(Projectiles.projectilesDict[inp], transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Debug.Log("No existe ese poder"); //hacer un pop up ingame que diga eso
+            }
         }
+
+
+
     }
 }
