@@ -18,11 +18,25 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            CurrentHealth--;
-            Debug.Log("Chocó y le hizo daño");
-            Debug.Log("Salud actual = " + CurrentHealth);
+            LoseHealth();
+            Debug.Log("Chocó y le hizo daño. Salud actual = " + CurrentHealth);
             Destroy(collision.gameObject);
 
         }
     }
+
+    private void LoseHealth()
+    {
+        CurrentHealth--;
+        if (CurrentHealth <= 0) {
+
+            CharacterDeath();
+        }
+
+    }
+    private void CharacterDeath()
+    {
+        Debug.Log("O no muero pa siempre por siempre y ceso de existir");
+    }
+
 }

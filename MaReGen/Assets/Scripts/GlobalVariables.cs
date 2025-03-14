@@ -5,7 +5,6 @@ using UnityEngine;
 public class GlobalVariables : MonoBehaviour
 {
     public static GlobalVariables Instance;
-
     [SerializeField] public float projectileSpeed = 1;
     [SerializeField] public float projectileLifeTime = 1;
 
@@ -29,9 +28,4 @@ public class GlobalVariables : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    private void Start()
-    {
-    }
-
 }

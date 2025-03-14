@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9158798492679403704}
   - component: {fileID: 1622125706286174690}
   m_Layer: 0
-  m_Name: AirEnemy
+  m_Name: WaterEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 137c7d9f033beb4449faa7bf826852ca, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,8 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7227e64b0222a4b977da65af7096cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLocation: {fileID: 0}
-  speed: 0.1
+  speed: 1
   health: 2
-  element: 0
-  weakness: 3
+  element: 1
+  weakness: 0

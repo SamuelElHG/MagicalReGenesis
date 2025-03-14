@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 using static Elements;
 
@@ -22,7 +23,8 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, GlobalVariables.Instance.centerLane, speed*Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, GlobalVariables.Instance.centerLane, speed*Time.deltaTime);
+        transform.position = transform.position + new Vector3 (0,0,-1*speed*Time.deltaTime);
     }
 
     public void healthDown(TipoElemento bulletElement)
