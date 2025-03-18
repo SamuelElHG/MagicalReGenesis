@@ -17,13 +17,6 @@ public class EnemySpawner : MonoBehaviour
         maxEnemySpawnCD = EnemyGlobalVariables.Instance.maxEnemySpawnCD;
         StartCoroutine(SpawnEnemies());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator SpawnEnemies()
     {
         while (true)
