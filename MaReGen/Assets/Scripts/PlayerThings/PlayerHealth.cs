@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int MaxHealth;
     [SerializeField] private int CurrentHealth;
+
+    [SerializeField] private GameObject gameOverCanvas;
+
+    [SerializeField] private Image[] hearts; 
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         {
             LoseHealth();
             Debug.Log("Chocó y le hizo daño. Salud actual = " + CurrentHealth);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
 
         }
     }
@@ -28,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
     private void LoseHealth()
     {
         CurrentHealth--;
+        UpdateHealthUI();
         if (CurrentHealth <= 0) {
 
             CharacterDeath();
@@ -36,7 +42,22 @@ public class PlayerHealth : MonoBehaviour
     }
     private void CharacterDeath()
     {
-        Debug.Log("O no muero pa siempre por siempre y ceso de existir");
+        gameOverCanvas.SetActive(true);
     }
 
+    void UpdateHealthUI()
+    {
+        // Recorrer todos los corazones y desactivarlos si la salud ha disminuido
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < CurrentHealth)
+            {
+                hearts[i].enabled = true; // Activa el corazón si está dentro del rango de salud
+            }
+            else
+            {
+                hearts[i].enabled = false; // Desactiva el corazón si la salud es menor
+            }
+        }
+    }
 }

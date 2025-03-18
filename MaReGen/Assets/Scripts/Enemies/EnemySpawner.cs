@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private List<EnemyScript> AllEnemies = new List<EnemyScript>();
     private float minEnemySpawnCD;
     private float maxEnemySpawnCD;
     private float cd;
-    private int CurrentEnemyIndex;
 
 
     // Start is called before the first frame update
@@ -29,8 +28,15 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            CurrentEnemyIndex = Random.Range(0, AllEnemies.Count);
-            Instantiate(AllEnemies[CurrentEnemyIndex], transform.position, Quaternion.identity);
+
+            //Instantiate(AllEnemies[CurrentEnemyIndex], transform.position, Quaternion.identity);
+            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+            if (bullet != null)
+            {
+                bullet.transform.position = transform.position;
+                bullet.transform.rotation = transform.rotation;
+                bullet.SetActive(true);
+            }
             cd = Random.Range(minEnemySpawnCD, maxEnemySpawnCD);
             yield return new WaitForSeconds(cd);
         }

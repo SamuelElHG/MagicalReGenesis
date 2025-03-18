@@ -9,7 +9,7 @@ public class EnemyScript : MonoBehaviour
      
 
     [SerializeField] private float speed;
-
+    [SerializeField] private int maxHealth;
     [SerializeField] public int health;
 
     [SerializeField] public TipoElemento element;
@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -42,7 +43,10 @@ public class EnemyScript : MonoBehaviour
         {
             Debug.Log("Oh no im dying ");
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+            health = maxHealth;
+
         }
     }
 }
