@@ -27,7 +27,7 @@ public class EnemySpawner : MonoBehaviour
             if (bullet != null)
             {
                 bullet.transform.position = transform.position;
-                bullet.transform.rotation = transform.rotation;
+                //bullet.transform.rotation = bullet.transform.rotation;
                 bullet.SetActive(true);
             }
             cd = Random.Range(minEnemySpawnCD, maxEnemySpawnCD);

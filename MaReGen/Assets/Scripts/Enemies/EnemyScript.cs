@@ -9,8 +9,8 @@ public class EnemyScript : MonoBehaviour
      
 
     [SerializeField] private float speed;
-    [SerializeField] private int maxHealth;
-    [SerializeField] public int health;
+    [SerializeField] private float maxHealth;
+    [SerializeField] public float health;
 
     [SerializeField] public TipoElemento element;
 
@@ -28,18 +28,18 @@ public class EnemyScript : MonoBehaviour
         transform.position = transform.position + new Vector3 (0,0,-1*speed*Time.deltaTime);
     }
 
-    public void healthDown(TipoElemento bulletElement)
+    public void healthDown(TipoElemento bulletElement, float damage)
     {
         Debug.Log(bulletElement.ToString());
         if (bulletElement == weakness)
         {
-            health -= 2;
+            health -= damage*2;
         }else
         {
-            health -= 1;
+            health -= damage;
         }
         Debug.Log("New health is " + health);
-        if (health == 0)
+        if (health <= 0)
         {
             Debug.Log("Oh no im dying ");
 

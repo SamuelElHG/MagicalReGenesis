@@ -61,7 +61,7 @@ public class PlayerThings : MonoBehaviour
         {
             if (Projectiles.projectilesDict.ContainsKey(inp))
             {
-                Instantiate(Projectiles.projectilesDict[inp], transform.position + Vector3.forward, Quaternion.identity);
+                Instantiate(Projectiles.projectilesDict[inp], transform.position + Vector3.forward+Vector3.up, Quaternion.identity);
             }
             else
             {

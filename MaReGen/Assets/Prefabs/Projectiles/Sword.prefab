@@ -69,6 +69,10 @@ PrefabInstance:
       value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4dd5896fb9bb82c41857d7191d6d8275, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4dd5896fb9bb82c41857d7191d6d8275, type: 3}
       propertyPath: m_TagString
       value: Projectile
       objectReference: {fileID: 0}
