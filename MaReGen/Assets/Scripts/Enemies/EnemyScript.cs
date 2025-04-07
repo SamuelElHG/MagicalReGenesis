@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Transactions;
+using TMPro;
 using UnityEngine;
 using static Elements;
 
@@ -15,6 +16,9 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] public TipoElemento element;
 
     [SerializeField] private TipoElemento weakness;
+
+    [SerializeField] private GameObject damageCanvas;
+    [SerializeField] private TMP_Text damageText;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,8 @@ public class EnemyScript : MonoBehaviour
     public void healthDown(TipoElemento bulletElement, float damage)
     {
         Debug.Log(bulletElement.ToString());
+        damageText.text = damage.ToString();
+        damageCanvas.gameObject.SetActive(true);
         if (bulletElement == weakness)
         {
             health -= damage*2;
@@ -44,8 +50,10 @@ public class EnemyScript : MonoBehaviour
             Debug.Log("Oh no im dying ");
 
             //Destroy(gameObject);
-            gameObject.SetActive(false);
+            damageCanvas.gameObject.SetActive(false);
             health = maxHealth;
+            gameObject.SetActive(false);
+
 
         }
     }

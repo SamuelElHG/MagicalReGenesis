@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletElement: 2
+  damage: 50
 --- !u!54 &-405749432920864599
 Rigidbody:
   m_ObjectHideFlags: 0
